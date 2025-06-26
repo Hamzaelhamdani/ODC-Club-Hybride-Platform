@@ -115,14 +115,6 @@ const getNavigationItems = (role: UserRole): NavigationItem[] => {
         { id: 'schedule', label: 'Schedule', icon: Calendar, page: 'schedule' }
       ];
 
-    case 'coach':
-      return [
-        ...baseItems,
-        { id: 'teams', label: 'Teams', icon: Users, page: 'teams' },
-        { id: 'performance', label: 'Performance', icon: BarChart3, page: 'performance' },
-        { id: 'goals', label: 'Goals', icon: Target, page: 'goals' }
-      ];
-
     case 'student':
       return [
         ...baseItems,
@@ -144,7 +136,6 @@ const getRoleIcon = (role: UserRole) => {
     case 'regional_admin': return MapPin;
     case 'club_manager': return Building;
     case 'expert': return Star;
-    case 'coach': return Users;
     case 'student': return GraduationCap;
     default: return Users;
   }
@@ -157,7 +148,6 @@ const getRoleColor = (role: UserRole) => {
     case 'regional_admin': return 'text-green-600';
     case 'club_manager': return 'text-odc-orange';
     case 'expert': return 'text-yellow-600';
-    case 'coach': return 'text-indigo-600';
     case 'student': return 'text-emerald-600';
     default: return 'text-gray-600';
   }
@@ -170,7 +160,6 @@ const getRoleTitle = (role: UserRole) => {
     case 'regional_admin': return 'Regional Admin';
     case 'club_manager': return 'Club Manager';
     case 'expert': return 'Expert/Mentor';
-    case 'coach': return 'Coach';
     case 'student': return 'Student';
     default: return 'User';
   }

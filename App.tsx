@@ -11,7 +11,6 @@ import { NationalAdminDashboard } from './components/dashboards/NationalAdminDas
 import { RegionalAdminDashboard } from './components/dashboards/RegionalAdminDashboard';
 import { ClubManagerDashboard } from './components/dashboards/ClubManagerDashboard';
 import { ExpertDashboard } from './components/dashboards/ExpertDashboard';
-import { CoachDashboard } from './components/dashboards/CoachDashboard';
 import { StudentDashboard } from './components/dashboards/StudentDashboard';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { Badge } from './components/ui/badge';
@@ -444,9 +443,6 @@ export default function App() {
       
       case 'expert':
         return <ExpertDashboard />;
-      
-      case 'coach':
-        return <CoachDashboard />;
       
       case 'student':
         return <StudentDashboard currentPage={currentPage} />;

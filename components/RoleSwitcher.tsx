@@ -105,15 +105,6 @@ const mockUsers: Record<UserRole, User> = {
     country: 'Morocco',
     isDemo: true
   },
-  coach: {
-    id: '6',
-    email: 'coach.startup@orange.fr',
-    name: 'Sophie Moreau',
-    role: 'coach',
-    country: 'France',
-    region: 'Provence-Alpes-Côte d\'Azur',
-    isDemo: true
-  },
   student: {
     id: '7',
     email: 'student.hassan@orange.ma',
@@ -162,13 +153,6 @@ const roleInfo = {
     icon: Star,
     color: 'bg-yellow-600',
     textColor: 'text-yellow-600'
-  },
-  coach: {
-    title: 'Coach',
-    description: 'Team leadership',
-    icon: Users,
-    color: 'bg-indigo-600',
-    textColor: 'text-indigo-600'
   },
   student: {
     title: 'Student',

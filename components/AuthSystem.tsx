@@ -19,7 +19,7 @@ import {
   EyeOff
 } from 'lucide-react';
 
-export type UserRole = 'super_admin' | 'country_admin' | 'regional_admin' | 'club_manager' | 'expert' | 'coach' | 'student';
+export type UserRole = 'super_admin' | 'country_admin' | 'regional_admin' | 'club_manager' | 'expert' | 'student';
 
 interface AuthSystemProps {
   onLogin: (user: User) => void;
@@ -307,13 +307,6 @@ const roleInfo = {
     icon: Star,
     color: 'bg-yellow-600',
     responsibilities: ['Project mentoring', 'Technical guidance', 'Skill development', 'Knowledge sharing']
-  },
-  coach: {
-    title: 'Coach/Team Leader',
-    description: 'Team leadership and performance coaching',
-    icon: Users,
-    color: 'bg-indigo-600',
-    responsibilities: ['Team coaching', 'Performance tracking', 'Leadership development', 'Goal achievement']
   },
   student: {
     title: 'Student',

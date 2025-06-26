@@ -11,8 +11,6 @@ const Club = sequelize.define('Club', {
   status: { type: DataTypes.ENUM('pending', 'active', 'archived') },
   team_leader_name: { type: DataTypes.STRING },
   team_leader_email: { type: DataTypes.STRING },
-  coach_name: { type: DataTypes.STRING },
-  coach_email: { type: DataTypes.STRING },
   focus_areas: { type: DataTypes.ARRAY(DataTypes.TEXT) },
   vision: { type: DataTypes.TEXT },
   objectives: { type: DataTypes.TEXT },

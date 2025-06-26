@@ -6,7 +6,7 @@ const User = sequelize.define('User', {
   name: { type: DataTypes.STRING, allowNull: false },
   email: { type: DataTypes.STRING, allowNull: false, unique: true },
   password_hash: { type: DataTypes.STRING },
-  role: { type: DataTypes.ENUM('super_admin', 'country_admin', 'regional_admin', 'club_manager', 'expert', 'coach', 'student'), allowNull: false },
+  role: { type: DataTypes.ENUM('super_admin', 'country_admin', 'regional_admin', 'club_manager', 'expert', 'student'), allowNull: false },
   country_code: { type: DataTypes.STRING },
   region_id: { type: DataTypes.INTEGER },
   university: { type: DataTypes.STRING },

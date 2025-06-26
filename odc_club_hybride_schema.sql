@@ -39,8 +39,6 @@ CREATE TABLE clubs (
     status VARCHAR(20) CHECK (status IN ('pending', 'active', 'archived')),
     team_leader_name VARCHAR(100),
     team_leader_email VARCHAR(100),
-    coach_name VARCHAR(100),
-    coach_email VARCHAR(100),
     focus_areas TEXT[],
     vision TEXT,
     objectives TEXT,
@@ -53,7 +51,7 @@ CREATE TABLE clubs (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Table: users (ODCiens, admins, coaches, etc.)
+-- Table: users (ODCiens, admins, etc.)
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -62,7 +60,7 @@ CREATE TABLE users (
     role VARCHAR(30) CHECK (
         role IN (
             'super_admin', 'country_admin', 'regional_admin',
-            'club_manager', 'expert', 'coach', 'student'
+            'club_manager', 'expert', 'student'
         )
     ),
     country_code VARCHAR(10),
@@ -81,7 +79,7 @@ CREATE TABLE club_memberships (
     user_id INTEGER REFERENCES users(id),
     club_id INTEGER REFERENCES clubs(id),
     role_in_club VARCHAR(30) CHECK (
-        role_in_club IN ('member', 'coach', 'manager', 'developer', 'designer', 'business')
+        role_in_club IN ('member', 'manager', 'developer', 'designer', 'business')
     ),
     status VARCHAR(20) CHECK (status IN ('active', 'pending', 'inactive')),
     joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
