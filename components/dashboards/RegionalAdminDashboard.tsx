@@ -1,3 +1,14 @@
+import React from 'react';
+// TODO: Integrate real-time data updates (WebSocket or polling)
+// TODO: Add search, filter, and sort to all tables/lists
+// TODO: Use modals/drawers for editing/viewing details
+// TODO: Show loading and empty states for all data fetches
+// TODO: Add in-app notification center for admin alerts
+// TODO: Add ARIA labels and keyboard navigation for accessibility
+// TODO: Log all admin actions for audit purposes
+// TODO: Add export/reporting options (CSV, PDF)
+// TODO: Add tooltips and contextual help for complex metrics/actions
+
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
