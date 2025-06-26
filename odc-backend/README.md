@@ -17,7 +17,24 @@ This is the backend API for the ODC Club Hybride Platform, built with Node.js, E
 - bcrypt for password hashing
 - express-validator for input validation
 
-## Getting Started
+## Project Structure
+```
+odc-backend/
+  src/
+    config/           # Database config
+    models/           # Sequelize models (all tables)
+    routes/           # Express routers (to be implemented)
+    controllers/      # Business logic (to be implemented)
+    middlewares/      # Error handler, auth, etc.
+    utils/            # Helpers, validators (to be implemented)
+    app.js            # Express app setup
+    server.js         # Entry point
+  .env                # Environment variables (not committed)
+  package.json        # Dependencies and scripts
+  README.md           # This file
+```
+
+## Launching Procedure
 
 ### 1. Clone the repository
 ```
@@ -31,7 +48,7 @@ npm install
 ```
 
 ### 3. Configure environment variables
-Create a `.env` file in the root with the following:
+Create a `.env` file in the root with the following content:
 ```
 DB_HOST=localhost
 DB_PORT=5432
@@ -43,33 +60,32 @@ JWT_EXPIRES_IN=7d
 PORT=4000
 ```
 
-### 4. Run the server
+### 4. Set up the database
+- Make sure PostgreSQL is running and a database named `odc_club_hybride` exists.
+- You can create the schema using the provided `../odc_club_hybride_schema.sql` file:
+  ```
+  psql -U postgres -d odc_club_hybride -f ../odc_club_hybride_schema.sql
+  ```
+- Alternatively, you can use Sequelize's `sequelize.sync()` for development (not recommended for production).
+
+### 5. Run the server
 ```
 npm run dev
 ```
+- The server will start on `http://localhost:4000` by default.
+- Test the health check endpoint: [http://localhost:4000/api/health](http://localhost:4000/api/health)
 
-The server will start on `http://localhost:4000` by default.
+### 6. Next Steps
+- Implement authentication (register, login, JWT) in `routes/` and `controllers/`.
+- Add CRUD endpoints for all entities.
+- Add validation, role-based access, and error handling as needed.
 
-### 5. Database
-- The schema is defined in `../odc_club_hybride_schema.sql`.
-- Use Sequelize migrations for model sync and updates.
-
-## Project Structure
-```
-odc-backend/
-  src/
-    config/
-    models/
-    routes/
-    controllers/
-    middlewares/
-    utils/
-    app.js
-    server.js
-  .env
-  package.json
-  README.md
-```
+## Main Backend Elements
+- **Express app**: Handles HTTP requests and middleware.
+- **Sequelize models**: All tables from the SQL schema are mapped to models in `src/models/`.
+- **Database config**: Uses `.env` for PostgreSQL connection.
+- **Error handler**: Centralized error middleware in `src/middlewares/`.
+- **Health check**: `/api/health` endpoint for basic server status.
 
 ## License
 MIT 
